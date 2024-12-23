@@ -1,10 +1,12 @@
 #start
 def main():
-    inp = str(input("Input 'd' to decode or 'e' to encode\n"))
+    inp = str(input("Input 'd' to decode or 'e' to encode or 'q' to quit\n"))
     if (inp=="d"):
         decode()
     elif (inp=="e"):
         encode()
+    elif (inp=='q'):
+        quit
     else:
         print("Invalid input.")
         main()
@@ -22,6 +24,7 @@ def decode():
         nMes+=chr(val)
         i+=1
     print("Your decoded message:\n"+nMes)
+    main()
     
 
 def encode():
@@ -35,7 +38,8 @@ def encode():
         val = ord(char)+ord(cod[i])
         nMes+=chr(val)
         i+=1
-    print("Your encoded message:\n"+nMes)
+    print("Your encoded message:\n\""+nMes+"\"")
     print("Your codeword:\n"+cod)
+    main()
 
 main()
